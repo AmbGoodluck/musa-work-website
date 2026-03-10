@@ -667,3 +667,50 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     font-size: 1.5rem;
   }
 }
+
+/* Media Image Slider Styles */
+.media-slider-container {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0 1rem 0;
+  width: 100%;
+}
+.media-slider-btn {
+  background: #222;
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  transition: background 0.2s;
+}
+.media-slider-btn:hover {
+  background: #444;
+}
+.media-slider-row {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  width: 100%;
+}
+.media-slider-img-wrapper {
+  flex: 0 0 auto;
+  width: 160px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #f5f5f5;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.media-slider-img {
+  max-width: 100%;
+  max-height: 100px;
+  border-radius: 6px;
+  object-fit: cover;
+}

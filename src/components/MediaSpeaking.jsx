@@ -1,4 +1,5 @@
 import React from "react";
+import MediaImageSlider from "./MediaImageSlider";
 
 function MediaSpeaking() {
   return (
@@ -28,6 +29,8 @@ function MediaSpeaking() {
           </div>
         </div>
       </div>
+      {/* Modern, scalable image slider below */}
+      <MediaImageSlider />
     </div>
   );
 }
