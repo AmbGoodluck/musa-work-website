@@ -48,8 +48,8 @@ const videos = [
   // Add more as needed
 ];
 
-// Import all images from the gallery folder (Vite root is src)
-const galleryImports = import.meta.glob("./assets/gallery/*.{jpg,png,jpeg}", { eager: true });
+// Import all images from the gallery folder using correct relative path for Vite
+const galleryImports = import.meta.glob("../assets/gallery/*.{jpg,png,jpeg}", { eager: true });
 const galleryImageFiles = Object.entries(galleryImports);
 
 // Example captions for the first images (customize as needed)
