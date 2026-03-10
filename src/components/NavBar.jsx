@@ -1,22 +1,29 @@
 import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { label: "Home", id: "home" },
-  { label: "About", id: "about" },
-  { label: "Work", id: "work" },
+  { label: "Home", id: "home", to: "/" },
+  { label: "About", id: "about", to: "/about" },
+  { label: "Work & Impact", id: "work", to: "/work-and-impact" },
   { label: "Leadership", id: "leadership" },
   { label: "Media", id: "media" },
   { label: "Publications", id: "publications" },
   { label: "Awards", id: "awards" },
+  { label: "Gallery", id: "gallery" },
   { label: "Contact", id: "contact" },
 ];
 
+
 function NavBar({ sections }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
 
-  const handleNav = (id) => {
+  const handleNav = (id, to) => {
     setMenuOpen(false);
-    sections[id].current.scrollIntoView({ behavior: "smooth" });
+    if (to) return; // Let Link handle navigation
+    if (sections[id]) {
+      sections[id].current.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -24,16 +31,29 @@ function NavBar({ sections }) {
       <div className="navbar__container">
         <div className="navbar__logo" tabIndex={0}>Musa A. Soko</div>
         <nav className={`navbar__links ${menuOpen ? "open" : ""}`} aria-label="Section navigation">
-          {navLinks.map((link) => (
-            <button
-              key={link.id}
-              className="navbar__link"
-              onClick={() => handleNav(link.id)}
-              tabIndex={0}
-            >
-              {link.label}
-            </button>
-          ))}
+          {navLinks.map((link) =>
+            link.to ? (
+              <Link
+                key={link.id}
+                to={link.to}
+                className="navbar__link"
+                tabIndex={0}
+                onClick={() => handleNav(link.id, link.to)}
+                aria-current={location.pathname === link.to ? "page" : undefined}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <button
+                key={link.id}
+                className="navbar__link"
+                onClick={() => handleNav(link.id)}
+                tabIndex={0}
+              >
+                {link.label}
+              </button>
+            )
+          )}
         </nav>
         <button
           className="navbar__hamburger"

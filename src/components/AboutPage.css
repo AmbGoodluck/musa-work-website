@@ -1,0 +1,155 @@
+.aboutpage-bg {
+  background: #fafbfc;
+  min-height: 100vh;
+  padding: 0 0 48px 0;
+}
+
+.aboutpage-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(11,43,76,0.06);
+  padding: 40px 32px 32px 32px;
+  margin-top: 40px;
+}
+
+.aboutpage-heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0B2B4C;
+  margin-bottom: 24px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.aboutpage-text {
+  color: #222;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1.13rem;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.aboutpage-text p {
+  margin-bottom: 18px;
+}
+
+.aboutpage-divider {
+  border-bottom: 1.5px solid #e5e7eb;
+  margin: 32px 0 24px 0;
+}
+
+.aboutpage-slider-heading {
+  font-size: 1.3rem;
+  color: #0B2B4C;
+  font-weight: 600;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.about-slider-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.about-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 24px;
+  padding-bottom: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: #F5A623 #e5e7eb;
+  flex: 1;
+}
+
+.about-slider::-webkit-scrollbar {
+  height: 8px;
+}
+.about-slider::-webkit-scrollbar-thumb {
+  background: #F5A623;
+  border-radius: 4px;
+}
+.about-slider::-webkit-scrollbar-track {
+  background: #e5e7eb;
+}
+
+.about-slider-card {
+  min-width: 260px;
+  max-width: 280px;
+  background: #f3f4f6;
+  border-radius: 10px;
+  box-shadow: 0 1px 8px rgba(11,43,76,0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 12px 16px 12px;
+  transition: box-shadow 0.2s;
+}
+
+.about-slider-card:hover {
+  box-shadow: 0 4px 18px rgba(11,43,76,0.13);
+}
+
+.about-slider-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: #e5e7eb;
+}
+
+.about-slider-caption {
+  font-size: 1rem;
+  color: #444;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.about-slider-arrow {
+  background: #F5A623;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s;
+  box-shadow: 0 1px 6px rgba(11,43,76,0.08);
+  margin: 0 4px;
+}
+
+.about-slider-arrow:hover,
+.about-slider-arrow:focus {
+  background: #e08c1a;
+}
+
+@media (max-width: 700px) {
+  .aboutpage-container {
+    padding: 18px 4vw 18px 4vw;
+    margin-top: 16px;
+  }
+  .aboutpage-heading {
+    font-size: 1.3rem;
+  }
+  .about-slider-card {
+    min-width: 70vw;
+    max-width: 80vw;
+    padding: 8px 4px 12px 4px;
+  }
+  .about-slider-img {
+    height: 110px;
+  }
+  .about-slider-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 1.1rem;
+  }
+}

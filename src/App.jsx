@@ -7,6 +7,7 @@ import LeadershipRoles from "./components/LeadershipRoles";
 import MediaSpeaking from "./components/MediaSpeaking";
 import Publications from "./components/Publications";
 import Awards from "./components/Awards";
+import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop";
@@ -21,6 +22,7 @@ function App() {
     media: useRef(null),
     publications: useRef(null),
     awards: useRef(null),
+    gallery: useRef(null),
     contact: useRef(null),
   };
 
@@ -48,6 +50,9 @@ function App() {
         </section>
         <section ref={sections.awards} id="awards">
           <Awards />
+        </section>
+        <section ref={sections.gallery} id="gallery">
+          <Gallery />
         </section>
         <section ref={sections.contact} id="contact">
           <Contact />
