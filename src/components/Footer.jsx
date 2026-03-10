@@ -30,7 +30,7 @@ function Footer({ sections }) {
           ))}
         </nav>
         <div className="footer__credit">
-          Site by [Your Name]
+          Site by Amadu Studios U.S.A
         </div>
       </div>
     </footer>
