@@ -1,0 +1,122 @@
+.leadership-main {
+  background: #fafbfc;
+  min-height: 100vh;
+  padding: 0 0 48px 0;
+}
+.leadership-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(11,43,76,0.06);
+  padding: 40px 32px 32px 32px;
+  margin-top: 40px;
+}
+.leadership-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0B2B4C;
+  margin-bottom: 18px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+.leadership-overview {
+  color: #222;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 36px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.leadership-section-heading {
+  font-size: 1.3rem;
+  color: #0B2B4C;
+  font-weight: 600;
+  margin-bottom: 18px;
+  margin-top: 32px;
+  text-align: left;
+}
+.leadership-roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+.leadership-role-card {
+  background: #f3f4f6;
+  border-radius: 10px;
+  box-shadow: 0 1px 8px rgba(11,43,76,0.07);
+  padding: 22px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  min-height: 180px;
+  transition: box-shadow 0.2s, border 0.2s;
+  border: 1.5px solid #f3f4f6;
+}
+.leadership-role-card:hover,
+.leadership-role-card:focus {
+  box-shadow: 0 4px 18px rgba(11,43,76,0.13);
+  border: 1.5px solid #F5A623;
+}
+.leadership-role-title {
+  font-size: 1.13rem;
+  color: #0B2B4C;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.leadership-role-meta {
+  color: #F5A623;
+  font-size: 0.98em;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.leadership-role-dot {
+  font-size: 1.1em;
+  color: #bbb;
+}
+.leadership-role-desc {
+  color: #333;
+  font-size: 1.04rem;
+  line-height: 1.6;
+}
+.leadership-philosophy-section {
+  margin-top: 36px;
+}
+.leadership-philosophy-text {
+  color: #222;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  background: #f9f9fb;
+  border-radius: 8px;
+  padding: 18px 16px;
+  margin-top: 10px;
+}
+.leadership-boards-section {
+  margin-top: 36px;
+}
+.leadership-boards-list {
+  list-style: disc inside;
+  color: #333;
+  font-size: 1.01rem;
+  margin: 0;
+  padding-left: 18px;
+}
+.leadership-boards-list li {
+  margin-bottom: 8px;
+}
+@media (max-width: 700px) {
+  .leadership-container {
+    padding: 18px 4vw 18px 4vw;
+    margin-top: 16px;
+  }
+  .leadership-title {
+    font-size: 1.3rem;
+  }
+  .leadership-roles-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

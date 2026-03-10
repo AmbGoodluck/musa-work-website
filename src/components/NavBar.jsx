@@ -5,11 +5,9 @@ const navLinks = [
   { label: "Home", id: "home", to: "/" },
   { label: "About", id: "about", to: "/about" },
   { label: "Work & Impact", id: "work", to: "/work-and-impact" },
-  { label: "Leadership", id: "leadership" },
-  { label: "Media", id: "media" },
-  { label: "Publications", id: "publications" },
+  { label: "Leadership", id: "leadership", to: "/leadership" },
+  { label: "Media", id: "media", to: "/media" },
   { label: "Awards", id: "awards" },
-  { label: "Gallery", id: "gallery" },
   { label: "Contact", id: "contact" },
 ];
 

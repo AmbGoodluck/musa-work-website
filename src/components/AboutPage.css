@@ -1,3 +1,81 @@
+/* Professional Journey & Contributions Section */
+.aboutpage-journey-section {
+  margin: 36px 0 0 0;
+}
+.aboutpage-journey-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+.aboutpage-journey-main {
+  flex: 2;
+}
+.aboutpage-journey-heading {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.aboutpage-journey-bar {
+  width: 6px;
+  height: 32px;
+  background: #0B2B4C;
+  border-radius: 4px;
+  margin-right: 14px;
+}
+.aboutpage-journey-heading h2 {
+  font-size: 1.35rem;
+  color: #0B2B4C;
+  font-weight: 600;
+  margin: 0;
+}
+.aboutpage-journey-text {
+  color: #222;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+.aboutpage-role {
+  font-variant: small-caps;
+  font-weight: 500;
+  color: #143e6b;
+}
+.aboutpage-journey-highlights {
+  flex: 1;
+  background: #f3f4f6;
+  border-radius: 10px;
+  box-shadow: 0 1px 8px rgba(11,43,76,0.07);
+  padding: 18px 14px 14px 14px;
+  min-width: 180px;
+  max-width: 220px;
+  margin-top: 8px;
+}
+.aboutpage-highlight-title {
+  font-size: 1.08rem;
+  color: #0B2B4C;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.aboutpage-highlight-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #333;
+  font-size: 1.01rem;
+  text-align: center;
+}
+.aboutpage-highlight-list li {
+  margin-bottom: 8px;
+}
+@media (max-width: 900px) {
+  .aboutpage-journey-layout {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .aboutpage-journey-highlights {
+    max-width: 100%;
+    margin-top: 0;
+  }
+}
 .aboutpage-bg {
   background: #fafbfc;
   min-height: 100vh;

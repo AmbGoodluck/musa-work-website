@@ -40,6 +40,40 @@ export default function AboutPage() {
             Recognized as an outstanding youth activist and goodwill ambassador for children, Musa is driven by a belief in dignity, solidarity, and the power of collective action. He is fluent in Mende, English, and Krio, and is known for his strong project coordination skills and unwavering dedication to building a more just and inclusive Sierra Leone.
           </p>
         </div>
+        {/* Professional Journey & Contributions Section */}
+        <section className="aboutpage-journey-section">
+          <div className="aboutpage-journey-layout">
+            <div className="aboutpage-journey-main">
+              <div className="aboutpage-journey-heading">
+                <span className="aboutpage-journey-bar" />
+                <h2>Professional Journey & Contributions</h2>
+              </div>
+              <div className="aboutpage-journey-text">
+                <p>
+                  Musa Ansumana Soko’s professional journey brings together grassroots organizing, policy advocacy and international engagement across more than two decades of public‑interest work in Sierra Leone and beyond. As <span className="aboutpage-role">Team Lead of the Water, Sanitation and Hygiene Network of Sierra Leone (WaSH‑Net)</span> and <span className="aboutpage-role">Executive Coordinator of the Youth Partnership for Peace and Development (YPPD)</span>, he has helped shape national conversations on access to safe water, domestic and gender‑based violence, youth leadership and inclusive governance. His roles as <span className="aboutpage-role">National Contact Point for the Global Call to Action Against Poverty</span> and former <span className="aboutpage-role">Youth Adviser to UN‑Habitat</span> reflect a career that connects local realities to regional and global policy spaces.
+                </p>
+                <p>
+                  Through WaSH‑Net, Musa has led efforts to build multi‑stakeholder platforms at national, district and regional levels that bring together government ministries, civil society organizations and communities around water, sanitation and hygiene. He has contributed to advocacy for stronger budget allocations to the WaSH sector, promoted practical policy options that reflect the demands of marginalized communities, and supported initiatives that increase access to potable water, improved sanitation facilities and positive hygiene practices, particularly for poor and vulnerable households.
+                </p>
+                <p>
+                  His long‑standing engagement with the Youth Partnership for Peace and Development has focused on challenging gender‑based and domestic violence and widening opportunities for women and young people. As Executive Coordinator, Musa has overseen programs that raise community awareness about domestic violence, train community and faith leaders in conflict resolution and mitigation, and integrate discussions of domestic and gender‑based violence into education and community dialogue. He has also championed the expansion of livelihoods and skills programmes for women as a pathway to greater independence, economic freedom and long‑term resilience.
+                </p>
+                <p>
+                  Beyond these roles, Musa’s experience includes designing domestic‑violence intervention models as a fellow at the Shelter for Abused Women and Children in Florida, advising peacebuilding research for The Australian National University, and pioneering ICT training and Braille book projects for blind and visually impaired learners in Sierra Leone. These contributions underline his commitment to inclusive development, whether by improving services for communities without safe water, creating safer environments for women and girls, or opening access to education and technology for people with disabilities. In every setting, he brings a strategic, evidence‑informed approach that links local lived experience with policy change and long‑term social impact.
+                </p>
+              </div>
+            </div>
+            <aside className="aboutpage-journey-highlights">
+              <div className="aboutpage-highlight-title">Highlights</div>
+              <ul className="aboutpage-highlight-list">
+                <li>WaSH‑Net Team Lead</li>
+                <li>YPPD Executive Coordinator</li>
+                <li>GCAP National Contact Point</li>
+                <li>UN‑Habitat Youth Adviser</li>
+              </ul>
+            </aside>
+          </div>
+        </section>
         <div className="aboutpage-divider" />
         <h2 className="aboutpage-slider-heading">Moments from the Journey</h2>
         <div className="about-slider-wrapper">
