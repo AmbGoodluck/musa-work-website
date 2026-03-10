@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import "../styles/global.css";
 
 // Import all images from gallery folder
-const images = Object.values(import.meta.glob('../assets/gallery/*.{jpg,jpeg,png,gif}', { eager: true, as: 'url' }));
+const images = Object.values(import.meta.glob('./assets/gallery/*.{jpg,jpeg,png,gif}', { eager: true, as: 'url' }));
 
 const MediaImageSlider = () => {
   const scrollRef = useRef(null);

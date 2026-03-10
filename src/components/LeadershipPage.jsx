@@ -49,7 +49,7 @@ export default function LeadershipPage() {
         <section className="leadership-hero">
           <h1 className="leadership-title">Leadership & Governance</h1>
           <p className="leadership-overview">
-            Musa Ansumana Soko is a national and global leader whose work bridges grassroots realities and international policy. As Team Lead of WaSH‑Net Sierra Leone and Executive Coordinator of YPPD, he leads national platforms advancing water, sanitation, peacebuilding, and youth empowerment. Musa’s leadership spans civil society, government, and multilateral spaces—connecting local voices to global campaigns on governance, rights, and social justice.
+            Musa Ansumana Soko is a national and global leader whose work bridges grassroots realities and international policy. As Team Lead of WaSH‑Net Sierra Leone and Executive Coordinator of YPPD, he leads national platforms advancing water, sanitation, peacebuilding, and youth empowerment. Musa’s leadership spans civil society, government, and multilateral spaces, connecting local voices to global campaigns on governance, rights, and social justice.
           </p>
         </section>
 
@@ -75,7 +75,7 @@ export default function LeadershipPage() {
         <section className="leadership-philosophy-section">
           <h2 className="leadership-section-heading">Leadership Philosophy</h2>
           <div className="leadership-philosophy-text">
-            Musa’s approach to leadership is participatory, evidence‑informed, and grounded in the lived experience of communities. He believes in building legitimacy from the grassroots up, while engaging confidently in international policy spaces. His leadership is defined by a commitment to accountability, dignity, and the elevation of marginalized voices—especially women, youth, and people with disabilities. Musa’s work is driven by the conviction that sustainable change comes from collaboration, strategic vision, and a relentless focus on social justice.
+            Musa’s approach to leadership is participatory, evidence-informed, and grounded in the lived experience of communities. He believes in building legitimacy from the grassroots up, while engaging confidently in international policy spaces. His leadership is defined by a commitment to accountability, dignity, and the elevation of marginalized voices, especially women, youth, and people with disabilities. Musa’s work is driven by the conviction that sustainable change comes from collaboration, strategic vision, and a relentless focus on social justice.
           </div>
         </section>
 

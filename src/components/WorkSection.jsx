@@ -40,7 +40,7 @@ export default function WorkSection() {
       <div className="work-section__container">
         <h2 className="work-section__heading">Work & Impact</h2>
         <p className="work-section__intro">
-          Musa Ansumana Soko’s work is dedicated to advancing social justice, equity, and opportunity for all. Through strategic leadership and hands-on collaboration, he addresses some of Sierra Leone’s most pressing challenges—improving water and sanitation, promoting gender equality, empowering youth, and strengthening governance. His approach brings together communities, policymakers, and partners to create lasting, meaningful change.
+          Musa Ansumana Soko’s work is dedicated to advancing social justice, equity, and opportunity for all. Through strategic leadership and hands-on collaboration, he addresses some of Sierra Leone’s most pressing challenges: improving water and sanitation, promoting gender equality, empowering youth, and strengthening governance. His approach brings together communities, policymakers, and partners to create lasting, meaningful change.
         </p>
         <div className="work-section__grid">
           {workPillars.map((pillar, idx) => (

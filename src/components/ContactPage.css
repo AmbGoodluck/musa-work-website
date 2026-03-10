@@ -1,0 +1,132 @@
+/* ContactPage.css */
+.contact-page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3rem 1.25rem;
+  background: #fff;
+}
+.contact-header {
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+.contact-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #153a5b;
+  margin-bottom: 0.7rem;
+}
+.contact-intro {
+  font-size: 1.08rem;
+  color: #2d3a4a;
+  margin-bottom: 0.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin: 0 auto 2.2rem auto;
+  max-width: 520px;
+  background: #f7fafd;
+  border-radius: 10px;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(21,58,91,0.04);
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+label {
+  font-weight: 500;
+  color: #153a5b;
+  margin-bottom: 0.1rem;
+}
+input,
+select,
+textarea {
+  font-size: 1rem;
+  padding: 0.6rem 0.7rem;
+  border: 1.5px solid #c3d0e0;
+  border-radius: 6px;
+  background: #fff;
+  color: #1a2a3a;
+  transition: border 0.2s;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #153a5b;
+  outline: none;
+  background: #f0f6fa;
+}
+input.error,
+select.error,
+textarea.error {
+  border-color: #e03a3a;
+  background: #fff6f6;
+}
+.form-error {
+  color: #e03a3a;
+  font-size: 0.97rem;
+  margin-top: 0.1rem;
+}
+.form-success {
+  color: #1a7f3c;
+  font-size: 1.05rem;
+  margin-top: 0.7rem;
+  font-weight: 500;
+}
+.contact-submit-btn {
+  background: #153a5b;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 0;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.contact-submit-btn:disabled,
+.contact-submit-btn[aria-busy="true"] {
+  background: #7a8ca3;
+  cursor: not-allowed;
+}
+.contact-submit-btn:hover:not(:disabled) {
+  background: #1d4a7a;
+}
+.required {
+  color: #e03a3a;
+  margin-left: 0.2rem;
+}
+.contact-direct {
+  text-align: center;
+  margin-top: 2.2rem;
+  font-size: 1.08rem;
+  color: #2d3a4a;
+}
+.contact-direct a {
+  color: #153a5b;
+  text-decoration: underline;
+}
+.contact-note {
+  display: block;
+  font-size: 0.98rem;
+  color: #4a5a6a;
+  margin-top: 0.2rem;
+}
+@media (max-width: 600px) {
+  .contact-page-container {
+    padding: 1.2rem 0.5rem 2rem 0.5rem;
+  }
+  .contact-title {
+    font-size: 1.4rem;
+  }
+  .contact-form {
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+  }
+}

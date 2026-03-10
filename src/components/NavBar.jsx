@@ -7,10 +7,9 @@ const navLinks = [
   { label: "Work & Impact", id: "work", to: "/work-and-impact" },
   { label: "Leadership", id: "leadership", to: "/leadership" },
   { label: "Media", id: "media", to: "/media" },
-  { label: "Awards", id: "awards" },
-  { label: "Contact", id: "contact" },
+  { label: "Awards", id: "awards", to: "/awards-and-recognitions" },
+  { label: "Contact", id: "contact", to: "/contact" },
 ];
-
 
 function NavBar({ sections }) {
   const [menuOpen, setMenuOpen] = useState(false);

@@ -1,0 +1,62 @@
+/* AwardsPage.css */
+.awards-page-container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3rem 1.25rem;
+  background: #fff;
+}
+.awards-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.awards-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #153a5b;
+  margin-bottom: 0.7rem;
+}
+.awards-intro {
+  font-size: 1.1rem;
+  color: #2d3a4a;
+  margin-bottom: 0.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.awards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.award-card {
+  background: #f7fafd;
+  border-left: 4px solid #153a5b;
+  border-radius: 8px;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(21,58,91,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.award-name {
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: #153a5b;
+}
+.award-meta {
+  font-size: 1rem;
+  color: #4a5a6a;
+  font-weight: 400;
+}
+@media (max-width: 600px) {
+  .awards-page-container {
+    padding: 1.2rem 0.5rem 2rem 0.5rem;
+  }
+  .awards-title {
+    font-size: 1.5rem;
+  }
+  .award-card {
+    padding: 1rem 0.7rem;
+  }
+}

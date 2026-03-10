@@ -33,7 +33,7 @@ const methods = [
   },
   {
     title: "Mobilize",
-    desc: "Coordinate multi-stakeholder action—government, CSOs, youth, faith leaders—for collective impact."
+    desc: "Coordinate multi-stakeholder action: government, CSOs, youth, faith leaders, for collective impact."
   },
   {
     title: "Influence Policy",
@@ -92,7 +92,6 @@ export default function WorkAndImpactPage() {
                 <h3>{p.title}</h3>
                 <div className="project-meta">{p.location}</div>
                 <p>{p.summary}</p>
-                <a className="project-link" href={p.link}>View case study</a>
               </div>
             ))}
           </div>

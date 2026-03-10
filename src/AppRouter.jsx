@@ -16,6 +16,8 @@ import AboutPage from "./components/AboutPage";
 import WorkPage from "./components/WorkPage";
 import LeadershipPage from "./components/LeadershipPage";
 import MediaPage from "./pages/MediaPage";
+import AwardsPage from "./components/AwardsPage";
+import ContactPage from "./components/ContactPage";
 
 function MainSections({ sections }) {
   return (
@@ -72,6 +74,8 @@ export default function AppRouter() {
         <Route path="/work-and-impact" element={<WorkPage />} />
         <Route path="/leadership" element={<LeadershipPage />} />
         <Route path="/media" element={<MediaPage />} />
+        <Route path="/awards-and-recognitions" element={<AwardsPage />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="/" element={<MainSections sections={sections} />} />
       </Routes>
       <Footer sections={sections} />
