@@ -1,62 +1,143 @@
-/* AwardsPage.css */
-.awards-page-container {
-  max-width: 950px;
-  margin: 0 auto;
-  padding: 2.5rem 1.25rem 3rem 1.25rem;
-  background: #fff;
+/* ================================================================
+   AwardsPage.css — redesigned with year-column timeline
+   ================================================================ */
+
+.ap-page {
+  background: var(--color-bg);
+  min-height: 100vh;
+  padding-bottom: 64px;
 }
-.awards-header {
-  text-align: center;
-  margin-bottom: 2.5rem;
+
+/* ── Header band ─────────────────────────────────────────────── */
+.ap-header-band {
+  background: var(--color-primary);
+  padding: 56px var(--space) 48px;
 }
-.awards-title {
-  font-size: 2.3rem;
+.ap-header-inner { max-width: 900px; margin: 0 auto; }
+.ap-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
   font-weight: 700;
-  color: #153a5b;
-  margin-bottom: 0.7rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 12px;
 }
-.awards-intro {
-  font-size: 1.1rem;
-  color: #2d3a4a;
-  margin-bottom: 0.5rem;
+.ap-title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  color: var(--color-white);
+  margin: 0 0 14px 0;
+  line-height: 1.15;
+}
+.ap-intro {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.65);
+  margin: 0;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  line-height: 1.6;
 }
-.awards-list {
+
+/* ── Container ───────────────────────────────────────────────── */
+.ap-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px var(--space) 0;
+}
+
+/* ── Timeline ────────────────────────────────────────────────── */
+.ap-timeline {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 2rem;
 }
-.award-card {
-  background: #f7fafd;
-  border-left: 4px solid #153a5b;
-  border-radius: 8px;
-  padding: 1.2rem 1.5rem;
-  box-shadow: 0 2px 8px rgba(21,58,91,0.04);
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
+
+.ap-item {
+  display: grid;
+  grid-template-columns: 70px 36px 1fr;
+  gap: 0 16px;
+  align-items: start;
+  min-height: 80px;
 }
-.award-name {
-  font-size: 1.18rem;
-  font-weight: 600;
-  color: #153a5b;
-}
-.award-meta {
+
+/* Year column */
+.ap-year {
   font-size: 1rem;
-  color: #4a5a6a;
-  font-weight: 400;
+  font-weight: 800;
+  color: var(--color-accent);
+  text-align: right;
+  padding-top: 16px;
+  letter-spacing: 0.5px;
 }
+.ap-year-na { color: var(--color-gray-dark); font-weight: 400; }
+
+/* Spine */
+.ap-spine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 18px;
+}
+.ap-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  border: 3px solid var(--color-white);
+  box-shadow: 0 0 0 2px var(--color-accent);
+  flex-shrink: 0;
+  z-index: 1;
+}
+.ap-line {
+  width: 2px;
+  flex: 1;
+  min-height: 48px;
+  background: linear-gradient(to bottom, var(--color-accent), var(--color-gray-dark));
+  margin-top: 4px;
+}
+
+/* Award card */
+.ap-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px 20px 14px;
+  margin-bottom: 16px;
+  border-left: 3px solid transparent;
+  transition: box-shadow var(--transition), transform var(--transition),
+              border-left-color var(--transition);
+}
+.ap-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
+  border-left-color: var(--color-accent);
+}
+.ap-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+.ap-issuer {
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  line-height: 1.45;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 600px) {
-  .awards-page-container {
-    padding: 1.2rem 0.5rem 2rem 0.5rem;
+  .ap-header-band { padding: 40px var(--space-sm) 36px; }
+  .ap-container   { padding: 32px var(--space-sm) 0; }
+
+  .ap-item {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding-bottom: 8px;
   }
-  .awards-title {
-    font-size: 1.5rem;
+  .ap-year {
+    text-align: left;
+    padding-top: 0;
+    font-size: 0.9rem;
   }
-  .award-card {
-    padding: 1rem 0.7rem;
-  }
+  .ap-spine { display: none; }
+  .ap-card  { margin-bottom: 4px; }
 }

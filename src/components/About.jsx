@@ -1,11 +1,16 @@
+
+import photo05 from "../assets/gallery/photo-05.jpg";
 import React from "react";
 
 function About() {
   return (
     <div className="about">
       <div className="about__visual">
-        {/* Drop about/secondary image here: src/assets/about.jpg */}
-        <div className="about__image-placeholder" aria-label="About visual"></div>
+        <img
+          src={photo05}
+          alt="Musa Ansumana Soko"
+          className="about__image"
+        />
       </div>
       <div className="about__text">
         <h2>About Musa</h2>

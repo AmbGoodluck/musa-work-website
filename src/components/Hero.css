@@ -1,0 +1,166 @@
+/* ================================================================
+   Hero.css — photo slideshow styles
+   ================================================================ */
+
+/* ── Slides container (fills the portrait frame) ────────────── */
+.hero__slides {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Each slide — cross-fade */
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius-xl);
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  /* Subtle Ken-Burns zoom */
+  animation: kenBurns 9s ease-in-out infinite alternate;
+}
+.hero__slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+@keyframes kenBurns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.06); }
+}
+
+/* ── Inner glow on the slides container ─────────────────────── */
+.hero__slides::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-xl);
+  box-shadow: inset 0 0 0 1.5px rgba(245,166,35,0.18),
+              inset 0 -60px 60px -20px rgba(11,43,76,0.55);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ── Arrow buttons ───────────────────────────────────────────── */
+.hero__slide-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(11,43,76,0.6);
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.22);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  transition: background 0.2s, transform 0.2s, border-color 0.2s;
+  line-height: 1;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+.hero__slide-arrow--prev { left: 14px; }
+.hero__slide-arrow--next { right: 14px; }
+.hero__slide-arrow:hover {
+  background: var(--color-accent);
+  border-color: transparent;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* ── Dot navigation ──────────────────────────────────────────── */
+.hero__slide-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.hero__slide-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.45);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.25s, transform 0.25s;
+}
+.hero__slide-dot.active {
+  background: var(--color-accent);
+  transform: scale(1.4);
+}
+
+/* ── Counter ─────────────────────────────────────────────────── */
+.hero__slide-counter {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  z-index: 10;
+  background: rgba(0,0,0,0.4);
+  color: rgba(255,255,255,0.9);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+  letter-spacing: 0.5px;
+}
+
+/* ── Name badge — bottom of frame ───────────────────────────── */
+.hero__name-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 16px;
+  z-index: 10;
+  background: rgba(11,43,76,0.82);
+  backdrop-filter: blur(8px);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 10px 16px 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  pointer-events: none;
+}
+.hero__name-badge-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+}
+.hero__name-badge-role {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ── Make portrait frame position:relative for abs children ──── */
+.hero__portrait-frame {
+  position: relative;
+}
+
+/* Placeholder text */
+.hero__portrait-placeholder span {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  text-align: center;
+  padding: 0 16px;
+  line-height: 1.5;
+}

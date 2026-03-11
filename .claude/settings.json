@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(find . -name .vite -not -path */node_modules/*)",
+      "Bash(rm -rf node_modules/.vite)",
+      "Bash(rm -rf dist)",
+      "Bash(find dist/ -name *.jpg -o -name *.png)",
+      "Bash(node -e \":*)",
+      "Bash(mkdir -p public/images/hero public/images/about public/images/gallery)",
+      "Bash(cp src/assets/hero-photos/photo-*.jpg public/images/hero/)",
+      "Bash(cp src/assets/about-photos/photo-*.jpg public/images/about/)",
+      "Bash(cp src/assets/gallery/photo-*.jpg public/images/gallery/)",
+      "Bash(ls /c/Users/jalloho/Downloads/*.jpg /c/Users/jalloho/Downloads/*.png /c/Users/jalloho/Downloads/*.jpeg)",
+      "Bash(ls -lt /c/Users/jalloho/AppData/Local/Temp/*.jpg /c/Users/jalloho/AppData/Local/Temp/*.png)",
+      "Bash(find /c/Users/jalloho/AppData/Local/Temp -name *.jpg -o -name *.png)"
+    ]
+  }
+}

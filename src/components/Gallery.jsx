@@ -1,25 +1,26 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/global.css";
 
-// Vite: Import all images from gallery folder
-const images = Object.values(import.meta.glob('./assets/gallery/*.{jpg,jpeg,png,gif}', { eager: true, as: 'url' }));
+const images = Array.from({ length: 19 }, (_, i) =>
+  `/images/gallery/photo-${String(i + 1).padStart(2, "0")}.jpg`
+);
+
+// Duplicate for seamless infinite scroll
+const track = [...images, ...images];
 
 const Gallery = () => (
   <section className="gallery-section" id="gallery">
-    <div className="container">
+    <div className="gallery-strip-header">
       <h2 className="section-title">Gallery</h2>
-      <div className="gallery-grid">
-        {images.length === 0 ? (
-          <div style={{ color: 'red', fontWeight: 'bold', textAlign: 'center', margin: '2rem 0' }}>
-            No gallery images found. Please check your src/assets/gallery folder and Vite config.
+      <Link to="/media" className="gallery-viewmore">View full gallery →</Link>
+    </div>
+    <div className="gallery-strip-outer" aria-label="Photo gallery">
+      <div className="gallery-strip-track">
+        {track.map((src, idx) => (
+          <div className="gallery-strip-item" key={idx} aria-hidden={idx >= images.length}>
+            <img src={src} alt={`Musa Ansumana Soko — photo ${(idx % images.length) + 1}`} loading="lazy" />
           </div>
-        ) : (
-          images.map((img, idx) => (
-            <div className="gallery-card" key={idx}>
-              <img src={img} alt={`Musa Ansumana Soko ${idx + 1}`} className="gallery-img" />
-            </div>
-          ))
-        )}
+        ))}
       </div>
     </div>
   </section>

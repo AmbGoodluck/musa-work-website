@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { useRef } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -23,7 +23,10 @@ function MainSections({ sections }) {
   return (
     <main>
       <section ref={sections.home} id="home">
-        <Hero scrollToContact={() => sections.contact.current.scrollIntoView({ behavior: "smooth" })} scrollToWork={() => sections.work.current.scrollIntoView({ behavior: "smooth" })} />
+        <Hero
+          scrollToContact={() => sections.contact.current?.scrollIntoView({ behavior: "smooth" })}
+          scrollToWork={() => sections.work.current?.scrollIntoView({ behavior: "smooth" })}
+        />
       </section>
       <section ref={sections.about} id="about">
         <About />
@@ -43,9 +46,7 @@ function MainSections({ sections }) {
       <section ref={sections.awards} id="awards">
         <Awards />
       </section>
-      <section ref={sections.gallery} id="gallery">
-        <Gallery />
-      </section>
+      {/* Gallery section removed from main page as requested */}
       <section ref={sections.contact} id="contact">
         <Contact />
       </section>
@@ -55,30 +56,30 @@ function MainSections({ sections }) {
 
 export default function AppRouter() {
   const sections = {
-    home: useRef(null),
-    about: useRef(null),
-    work: useRef(null),
-    leadership: useRef(null),
-    media: useRef(null),
+    home:         useRef(null),
+    about:        useRef(null),
+    work:         useRef(null),
+    leadership:   useRef(null),
+    media:        useRef(null),
     publications: useRef(null),
-    awards: useRef(null),
-    gallery: useRef(null),
-    contact: useRef(null),
+    awards:       useRef(null),
+    gallery:      useRef(null),
+    contact:      useRef(null),
   };
 
   return (
     <Router>
-      <NavBar sections={sections} />
+      <NavBar />
       <Routes>
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/work-and-impact" element={<WorkPage />} />
-        <Route path="/leadership" element={<LeadershipPage />} />
-        <Route path="/media" element={<MediaPage />} />
-        <Route path="/awards-and-recognitions" element={<AwardsPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/" element={<MainSections sections={sections} />} />
+        <Route path="/about"                    element={<AboutPage />} />
+        <Route path="/work-and-impact"          element={<WorkPage />} />
+        <Route path="/leadership"               element={<LeadershipPage />} />
+        <Route path="/media"                    element={<MediaPage />} />
+        <Route path="/awards-and-recognitions"  element={<AwardsPage />} />
+        <Route path="/contact"                  element={<ContactPage />} />
+        <Route path="/"                         element={<MainSections sections={sections} />} />
       </Routes>
-      <Footer sections={sections} />
+      <Footer />
       <BackToTop />
     </Router>
   );

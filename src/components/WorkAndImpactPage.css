@@ -1,193 +1,263 @@
-.work-impact-page {
-  background: #fafbfc;
+/* ================================================================
+   WorkAndImpactPage.css — redesigned
+   ================================================================ */
+
+.wip-page {
+  background: var(--color-bg);
   min-height: 100vh;
-  padding: 0 0 48px 0;
+  padding-bottom: 64px;
 }
-.work-impact-container {
+
+/* ── Header band ─────────────────────────────────────────────── */
+.wip-header-band {
+  background: var(--color-primary);
+  padding: 56px var(--space) 48px;
+}
+.wip-header-inner {
   max-width: 1100px;
   margin: 0 auto;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 16px rgba(11,43,76,0.06);
-  padding: 40px 32px 32px 32px;
-  margin-top: 40px;
 }
-.work-impact-title {
-  font-size: 2.2rem;
+.wip-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
   font-weight: 700;
-  color: #0B2B4C;
-  margin-bottom: 24px;
-  text-align: center;
-  letter-spacing: 0.5px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 12px;
 }
-.work-impact-section {
-  margin-bottom: 40px;
+.wip-title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  color: var(--color-white);
+  margin: 0 0 10px 0;
+  line-height: 1.15;
 }
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 28px;
-}
-.project-card {
-  background: #f3f4f6;
-  border-radius: 10px;
-  box-shadow: 0 1px 8px rgba(11,43,76,0.07);
-  padding: 18px 18px 16px 18px;
-  display: flex;
-  flex-direction: column;
-  min-height: 180px;
-  transition: box-shadow 0.2s;
-}
-.project-card:hover {
-  box-shadow: 0 4px 18px rgba(11,43,76,0.13);
-}
-.project-meta {
-  color: #F5A623;
-  font-size: 0.98em;
-  margin-bottom: 6px;
-}
-.project-link {
-  color: #0B2B4C;
-  font-weight: 600;
-  margin-top: 10px;
-  text-decoration: underline;
-  align-self: flex-start;
-}
-.methods-row {
-  display: flex;
-  gap: 24px;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.method-step {
-  flex: 1 1 180px;
-  background: #f9f9fb;
-  border-radius: 8px;
-  padding: 18px 12px;
-  margin: 4px 0;
-  min-width: 160px;
-  text-align: center;
-  box-shadow: 0 1px 6px rgba(11,43,76,0.05);
-}
-.method-title {
-  font-weight: 700;
-  color: #0B2B4C;
-  margin-bottom: 6px;
-}
-.method-desc {
-  color: #333;
-  font-size: 1.01rem;
-}
-.sectors-stakeholders {
-  display: flex;
-  gap: 48px;
-  flex-wrap: wrap;
-  margin-top: 12px;
-}
-.sectors-stakeholders > div {
-  flex: 1 1 220px;
-}
-.sectors-stakeholders h3 {
-  color: #0B2B4C;
-  font-size: 1.1rem;
-  margin-bottom: 8px;
-}
-.sectors-stakeholders ul {
-  padding-left: 18px;
+.wip-subtitle {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.65);
   margin: 0;
-  color: #333;
-  font-size: 1.01rem;
+  max-width: 600px;
+}
+
+/* ── Impact band ─────────────────────────────────────────────── */
+.wip-impact-band {
+  background: var(--color-primary-light);
+  padding: 36px var(--space);
 }
 .impact-row {
   display: flex;
-  gap: 24px;
-  justify-content: space-between;
+  gap: var(--space);
+  justify-content: center;
   flex-wrap: wrap;
-  margin-top: 12px;
 }
 .impact-card {
-  flex: 1 1 180px;
-  background: #f9f9fb;
-  border-radius: 8px;
-  padding: 18px 12px;
-  margin: 4px 0;
-  min-width: 160px;
+  flex: 1 1 200px;
   text-align: center;
-  box-shadow: 0 1px 6px rgba(11,43,76,0.05);
+  padding: 24px 16px;
+  min-width: 160px;
+  max-width: 280px;
 }
 .impact-value {
-  font-size: 2rem;
-  color: #F5A623;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  line-height: 1;
+  margin-bottom: 8px;
 }
 .impact-label {
-  color: #333;
-  font-size: 1.01rem;
-  margin-top: 4px;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.92rem;
+  line-height: 1.4;
 }
-.services-row {
-  display: flex;
-  gap: 24px;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-bottom: 18px;
+
+/* ── Container ───────────────────────────────────────────────── */
+.wip-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--space);
 }
-.service-card {
-  flex: 1 1 180px;
-  background: #f9f9fb;
-  border-radius: 8px;
-  padding: 18px 12px;
-  margin: 4px 0;
-  min-width: 160px;
-  text-align: center;
-  box-shadow: 0 1px 6px rgba(11,43,76,0.05);
-}
-.service-title {
+
+/* ── Section spacing ─────────────────────────────────────────── */
+.wip-section { padding: 48px 0; }
+.wip-section-header { margin-bottom: 32px; }
+.wip-section-label {
+  display: inline-block;
+  font-size: 0.72rem;
   font-weight: 700;
-  color: #0B2B4C;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--color-accent);
   margin-bottom: 6px;
 }
-.service-desc {
-  color: #333;
-  font-size: 1.01rem;
+.wip-section-header h2 {
+  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+  color: var(--color-primary);
+  margin: 0;
 }
-.services-cta {
-  text-align: center;
-  margin-top: 18px;
+.wip-divider {
+  border: none;
+  border-top: 1.5px solid var(--color-gray-dark);
 }
-.cta-btn {
-  display: inline-block;
-  margin-top: 10px;
-  background: #F5A623;
-  color: #fff;
+
+/* ── Projects grid ───────────────────────────────────────────── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+.project-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  border-top: 3px solid transparent;
+  transition: box-shadow var(--transition), transform var(--transition),
+              border-top-color var(--transition);
+}
+.project-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+  border-top-color: var(--color-accent);
+}
+.project-card-icon { font-size: 1.8rem; margin-bottom: 12px; }
+.project-card h3 { font-size: 1.05rem; color: var(--color-primary); margin: 0 0 6px 0; }
+.project-meta {
+  font-size: 0.83rem;
+  color: var(--color-accent);
   font-weight: 600;
-  padding: 0.7em 1.5em;
-  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.project-card p {
+  font-size: 0.95rem;
+  color: var(--color-muted-dark);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Methods ─────────────────────────────────────────────────── */
+.methods-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.method-step {
+  flex: 1 1 200px;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 24px 18px 20px;
+  box-shadow: var(--shadow);
+  position: relative;
+  text-align: center;
+  min-width: 170px;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.method-step:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.method-step-num {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--color-gray-dark);
+  letter-spacing: 1px;
+}
+.method-icon  { font-size: 1.8rem; margin-bottom: 10px; }
+.method-title { font-size: 1.05rem; font-weight: 700; color: var(--color-primary); margin-bottom: 8px; }
+.method-desc  { font-size: 0.9rem; color: var(--color-muted-dark); line-height: 1.55; }
+
+/* ── Sectors & Stakeholders ──────────────────────────────────── */
+.sectors-stakeholders { display: flex; gap: 64px; flex-wrap: wrap; }
+.sectors-col { flex: 1 1 220px; }
+.sectors-col h3 {
+  font-size: 1rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  margin: 0 0 14px 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--color-accent);
+  display: inline-block;
+}
+.sectors-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.sectors-col li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.97rem;
+  color: var(--color-muted-dark);
+}
+.ss-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* ── Services ────────────────────────────────────────────────── */
+.services-row { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 32px; }
+.service-card {
+  flex: 1 1 200px;
+  background: var(--color-panel);
+  border-radius: var(--radius);
+  padding: 24px 18px 20px;
+  text-align: center;
+  min-width: 170px;
+  border-bottom: 3px solid var(--color-accent);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.service-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.service-icon  { font-size: 1.8rem; margin-bottom: 10px; }
+.service-title { font-size: 1rem; font-weight: 700; color: var(--color-primary); margin-bottom: 8px; }
+.service-desc  { font-size: 0.9rem; color: var(--color-muted-dark); line-height: 1.55; }
+
+/* ── CTA block ───────────────────────────────────────────────── */
+.services-cta {
+  background: var(--color-primary);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  text-align: center;
+}
+.services-cta p {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  margin: 0 0 20px 0;
+  color: rgba(255,255,255,0.82);
+}
+.services-cta b { color: var(--color-white); }
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-weight: 700;
+  padding: 0.75em 1.8em;
+  border-radius: var(--radius);
   text-decoration: none;
-  transition: background 0.18s;
+  font-size: 0.95rem;
+  transition: background var(--transition), transform var(--transition);
+  border: none;
+  cursor: pointer;
 }
-.cta-btn:hover,
-.cta-btn:focus {
-  background: #e08c1a;
-}
+.cta-btn:hover { background: var(--color-accent-dark); transform: translateY(-1px); }
+
+/* ── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 700px) {
-  .work-impact-container {
-    padding: 18px 4vw 18px 4vw;
-    margin-top: 16px;
-  }
-  .work-impact-title {
-    font-size: 1.3rem;
-  }
-  .projects-grid,
+  .wip-header-band   { padding: 40px var(--space-sm) 36px; }
+  .wip-container     { padding: 0 var(--space-sm); }
+  .wip-section       { padding: 32px 0; }
+  .impact-row        { gap: var(--space-sm); }
   .methods-row,
-  .impact-row,
-  .services-row {
-    flex-direction: column;
-    display: flex;
-    gap: 16px;
-  }
-  .sectors-stakeholders {
-    flex-direction: column;
-    gap: 18px;
-  }
+  .services-row      { gap: 14px; }
+  .sectors-stakeholders { flex-direction: column; gap: 28px; }
+  .services-cta      { padding: 24px var(--space-sm); }
 }

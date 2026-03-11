@@ -5,7 +5,6 @@ import About from "./components/About";
 import WorkImpact from "./components/WorkImpact";
 import LeadershipRoles from "./components/LeadershipRoles";
 import MediaSpeaking from "./components/MediaSpeaking";
-import Publications from "./components/Publications";
 import Awards from "./components/Awards";
 import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
@@ -20,7 +19,6 @@ function App() {
     work: useRef(null),
     leadership: useRef(null),
     media: useRef(null),
-    publications: useRef(null),
     awards: useRef(null),
     gallery: useRef(null),
     contact: useRef(null),
@@ -45,15 +43,10 @@ function App() {
         <section ref={sections.media} id="media">
           <MediaSpeaking />
         </section>
-        <section ref={sections.publications} id="publications">
-          <Publications />
-        </section>
         <section ref={sections.awards} id="awards">
           <Awards />
         </section>
-        <section ref={sections.gallery} id="gallery">
-          <Gallery />
-        </section>
+        {/* Gallery section removed from home page as requested */}
         <section ref={sections.contact} id="contact">
           <Contact />
         </section>
