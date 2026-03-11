@@ -2,10 +2,10 @@ import React from "react";
 
 const awards = [
   {
-    title: "Giraffe Heroes Project Recognition",
-    org: "Giraffe Heroes Project",
-    desc: "Honored for courageous and selfless service to community and country.",
-    icon: "🏅",
+    title: "Peacebuilder of the Year",
+    org: "Sierra Leone Peace Foundation",
+    desc: "Awarded for exceptional contributions to peace and reconciliation.",
+    icon: "🥇",
   },
   {
     title: "Humanitarian Leadership Award",
@@ -14,10 +14,10 @@ const awards = [
     icon: "🏆",
   },
   {
-    title: "Peacebuilder of the Year",
-    org: "Sierra Leone Peace Foundation",
-    desc: "Awarded for exceptional contributions to peace and reconciliation.",
-    icon: "🥇",
+    title: "Giraffe Heroes Project Recognition",
+    org: "Giraffe Heroes Project",
+    desc: "Honored for courageous and selfless service to community and country.",
+    icon: "🏅",
   },
 ];
 
