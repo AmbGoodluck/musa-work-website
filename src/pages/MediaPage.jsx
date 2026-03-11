@@ -1,6 +1,13 @@
 // MediaPage.jsx — redesigned; all content text preserved exactly
 import { useState, useEffect } from "react";
 import "../styles/MediaPage.css";
+import { useMediaSpeaking } from "../lib/hooks/useMediaSpeaking";
+
+const FALLBACK_VIDEOS = [
+  { youtubeId: "tkrUpPME4I8", title: "Civic Compass: Youth Voices in Governance",   description: "Episode 1 – Engaging youth leaders on public service.", date: "2025" },
+  { youtubeId: "NXnAlXG9Bxg", title: "Civic Compass: Water & Sanitation Dialogues", description: "Episode 2 – Discussing WaSH and local impact.",             date: "2025" },
+  { youtubeId: "jHG2IGN7wUI", title: "Civic Compass: Peacebuilding in Sierra Leone", description: "Episode 3 – Peacebuilding strategies and stories.",         date: "2025" },
+];
 
 // Social profiles
 const socialProfiles = [
@@ -58,33 +65,6 @@ const socialProfiles = [
   },
 ];
 
-// Video data
-const videos = [
-  {
-    id: "1",
-    title: "Civic Compass: Youth Voices in Governance",
-    description: "Episode 1 – Engaging youth leaders on public service.",
-    thumbnail: "https://img.youtube.com/vi/tkrUpPME4I8/hqdefault.jpg",
-    embedId: "tkrUpPME4I8",
-    date: "2025",
-  },
-  {
-    id: "2",
-    title: "Civic Compass: Water & Sanitation Dialogues",
-    description: "Episode 2 – Discussing WaSH and local impact.",
-    thumbnail: "https://img.youtube.com/vi/NXnAlXG9Bxg/hqdefault.jpg",
-    embedId: "NXnAlXG9Bxg",
-    date: "2025",
-  },
-  {
-    id: "3",
-    title: "Civic Compass: Peacebuilding in Sierra Leone",
-    description: "Episode 3 – Peacebuilding strategies and stories.",
-    thumbnail: "https://img.youtube.com/vi/jHG2IGN7wUI/hqdefault.jpg",
-    embedId: "jHG2IGN7wUI",
-    date: "2025",
-  },
-];
 
 // Gallery images — served from public/images/gallery/
 const captions = [
@@ -110,10 +90,18 @@ const galleryImages = Array.from({ length: 19 }, (_, idx) => ({
 const INITIAL_VISIBLE = 8;
 const LOAD_MORE_COUNT = 6;
 
+function formatYear(ts) {
+  if (!ts) return "";
+  const d = ts.toDate ? ts.toDate() : new Date(ts);
+  return String(d.getFullYear());
+}
+
 function MediaPage() {
   const [visibleCount, setVisibleCount]   = useState(INITIAL_VISIBLE);
   const [lightboxIdx, setLightboxIdx]     = useState(null);
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const { data: firestoreVideos, loading: videosLoading } = useMediaSpeaking();
+  const videos = !videosLoading && firestoreVideos.length > 0 ? firestoreVideos : FALLBACK_VIDEOS;
 
   // ESC closes modals; arrow keys navigate lightbox
   useEffect(() => {
@@ -191,24 +179,32 @@ function MediaPage() {
             Sierra Leone and beyond.
           </p>
           <div className="media-video-strip">
-            {videos.map((video) => (
-              <button
-                className="media-video-card"
-                key={video.id}
-                onClick={() => setSelectedVideo(video)}
-                aria-label={`Play video: ${video.title}`}
-              >
-                <div className="media-video-thumb-wrap">
-                  <img src={video.thumbnail} alt={video.title} className="media-video-thumb" />
-                  <span className="media-video-play-btn" aria-hidden="true">▶</span>
-                </div>
-                <div className="media-video-info">
-                  <h4>{video.title}</h4>
-                  <p>{video.description}</p>
-                  <span className="media-video-date">{video.date}</span>
-                </div>
-              </button>
-            ))}
+            {videosLoading ? (
+              <p style={{ color: "#64748b" }}>Loading videos…</p>
+            ) : (
+              videos.map((video) => (
+                <button
+                  className="media-video-card"
+                  key={video.id || video.youtubeId}
+                  onClick={() => setSelectedVideo(video)}
+                  aria-label={`Play video: ${video.title}`}
+                >
+                  <div className="media-video-thumb-wrap">
+                    <img
+                      src={`https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`}
+                      alt={video.title}
+                      className="media-video-thumb"
+                    />
+                    <span className="media-video-play-btn" aria-hidden="true">▶</span>
+                  </div>
+                  <div className="media-video-info">
+                    <h4>{video.title}</h4>
+                    <p>{video.description}</p>
+                    <span className="media-video-date">{video.date || formatYear(video.createdAt)}</span>
+                  </div>
+                </button>
+              ))
+            )}
           </div>
           <a
             href="https://www.youtube.com/@CivicCompasswithMusaAnsumana"
@@ -280,7 +276,7 @@ function MediaPage() {
               <iframe
                 width="560"
                 height="315"
-                src={`https://www.youtube.com/embed/${selectedVideo.embedId}`}
+                src={`https://www.youtube.com/embed/${selectedVideo.youtubeId}`}
                 title={selectedVideo.title}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -1,0 +1,67 @@
+.wash-blog-page { min-height: 60vh; }
+
+.wash-blog__header-band {
+  background: var(--navy, #0b2b4c);
+  color: #fff;
+  padding: 4rem 1.5rem 3rem;
+  text-align: center;
+}
+.wash-blog__header-inner { max-width: 700px; margin: 0 auto; }
+.wash-blog__eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold, #f5a623);
+  margin-bottom: 0.75rem;
+}
+.wash-blog__title { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; margin: 0 0 1rem; }
+.wash-blog__intro { font-size: 1rem; opacity: 0.85; line-height: 1.7; margin: 0; }
+
+.wash-blog__container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+.wash-blog__state { text-align: center; color: #64748b; padding: 3rem 0; }
+.wash-blog__state--error { color: #dc2626; }
+
+.wash-blog__grid { display: grid; gap: 2rem; }
+
+.wash-blog__card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(11,43,76,0.07);
+}
+.wash-blog__card-img { width: 100%; max-height: 300px; object-fit: cover; display: block; }
+
+.wash-blog__card-body { padding: 1.5rem 1.75rem 1.75rem; }
+
+.wash-blog__card-meta { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+
+.wash-blog__tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: #eff6ff;
+  color: #1d4ed8;
+  padding: 0.2rem 0.6rem;
+  border-radius: 99px;
+}
+.wash-blog__date { font-size: 0.8rem; color: #94a3b8; }
+
+.wash-blog__card-headline {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0b2b4c;
+  margin: 0 0 0.75rem;
+  line-height: 1.35;
+}
+.wash-blog__card-content {
+  font-size: 0.95rem;
+  color: #334155;
+  line-height: 1.75;
+  margin: 0;
+  white-space: pre-wrap;
+}

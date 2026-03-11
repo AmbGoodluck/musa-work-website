@@ -1,72 +1,74 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useMediaSpeaking } from "../lib/hooks/useMediaSpeaking";
 
-const videos = [
-  {
-    id: "tkrUpPME4I8",
-    title: "Civic Compass: Youth Voices in Governance",
-    desc: "Youth leaders on public service and civic participation.",
-  },
-  {
-    id: "NXnAlXG9Bxg",
-    title: "Civic Compass: Water & Sanitation Dialogues",
-    desc: "Discussing WaSH access and community-level impact.",
-  },
-  {
-    id: "jHG2IGN7wUI",
-    title: "Civic Compass: Peacebuilding in Sierra Leone",
-    desc: "Peacebuilding strategies, stories, and the road ahead.",
-  },
+// Fallback shown when Firestore collection is empty
+const FALLBACK_VIDEOS = [
+  { id: "tkrUpPME4I8", title: "Civic Compass: Youth Voices in Governance",     desc: "Youth leaders on public service and civic participation." },
+  { id: "NXnAlXG9Bxg", title: "Civic Compass: Water & Sanitation Dialogues",   desc: "Discussing WaSH access and community-level impact." },
+  { id: "jHG2IGN7wUI", title: "Civic Compass: Peacebuilding in Sierra Leone",   desc: "Peacebuilding strategies, stories, and the road ahead." },
 ];
 
-// Gallery photos from public/images/gallery/
 const galleryPhotos = Array.from({ length: 19 }, (_, i) =>
   `/images/gallery/photo-${String(i + 1).padStart(2, "0")}.jpg`
 );
 
-function VideoCard({ video }) {
+function VideoCard({ youtubeId, title, desc }) {
   const [playing, setPlaying] = useState(false);
-  const thumb = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
-
+  const thumb = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
   return (
     <div className="ms-video-card">
       {playing ? (
         <div className="ms-video-embed">
           <iframe
-            src={`https://www.youtube.com/embed/${video.id}?autoplay=1`}
-            title={video.title}
+            src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1`}
+            title={title}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
         </div>
       ) : (
-        <button className="ms-video-thumb-btn" onClick={() => setPlaying(true)} aria-label={`Play: ${video.title}`}>
-          <img src={thumb} alt={video.title} className="ms-video-thumb" />
+        <button className="ms-video-thumb-btn" onClick={() => setPlaying(true)} aria-label={`Play: ${title}`}>
+          <img src={thumb} alt={title} className="ms-video-thumb" />
           <span className="ms-video-play" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
           </span>
         </button>
       )}
       <div className="ms-video-info">
-        <h4>{video.title}</h4>
-        <p>{video.desc}</p>
+        <h4>{title}</h4>
+        {desc && <p>{desc}</p>}
       </div>
     </div>
   );
 }
 
 function MediaSpeaking() {
+  const { data: firestoreVideos, loading } = useMediaSpeaking();
+
+  // Use Firestore videos if available, otherwise show hardcoded fallback
+  const videos = !loading && firestoreVideos.length > 0 ? firestoreVideos : FALLBACK_VIDEOS;
+
   return (
     <div className="media-speaking">
       <h2>Media &amp; Speaking</h2>
 
-      {/* ── Video grid ──────────────────────────────────────── */}
       <div className="ms-videos-grid">
-        {videos.map((v) => <VideoCard key={v.id} video={v} />)}
+        {loading ? (
+          <p style={{ color: "#64748b", padding: "1rem 0" }}>Loading videos…</p>
+        ) : (
+          videos.map((v) => (
+            <VideoCard
+              key={v.youtubeId || v.id}
+              youtubeId={v.youtubeId || v.id}
+              title={v.title}
+              desc={v.description || v.desc}
+            />
+          ))
+        )}
       </div>
 
-      {/* ── Speaking topics ──────────────────────────────────── */}
       <div className="ms-topics">
         <ul>
           <li>UN and regional forums on peacebuilding, SDG16, and governance</li>
@@ -78,7 +80,6 @@ function MediaSpeaking() {
         </div>
       </div>
 
-      {/* ── Gallery preview ──────────────────────────────────── */}
       <div className="ms-gallery-section">
         <div className="ms-gallery-heading">
           <span className="ms-gallery-label">Gallery</span>
